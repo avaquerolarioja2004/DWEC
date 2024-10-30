@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        function sumar(a, b, ...c) {
+            var resultado = a + b;
+            c.forEach((n) => {
+                resultado += n;
+            });
+            return console.log(resultado);
+        }
+        sumar(1, 2, 3, 4, 5);
+    </script>
+</body>
+
+</html>
