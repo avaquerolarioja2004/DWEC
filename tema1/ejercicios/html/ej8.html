@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        //coje los elemetos que necesita, el resto le da igual
+        function test(a, b, c) {
+            return a + b + c;
+        }
+
+        console.log(test(1, 2, 3, 4, 5, 6, 7, 8, 9));
+
+        const bienvenido = function () {
+            return "bienvenido de nuevo, ";
+        };
+
+        const usuario = function (callback){
+            console.log(callback() + 'Javier');
+        };
+        usuario(bienvenido);
+    </script>
+</body>
+</html>

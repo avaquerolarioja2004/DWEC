@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        function calcularDiferenciaFechas() {
+            function validarFormato(fecha) {
+                const formato = /^\d{2}\/\d{2}\/\d{4}$/;
+                return formato.test(fecha);
+            }
+
+            function solicitarFecha(mensaje) {
+                let fecha;
+                do {
+                    fecha = prompt(mensaje);
+                    if (!validarFormato(fecha)) {
+                        alert("Fecha inválida. Asegúrate de usar el formato dd/mm/aaaa.");
+                    }
+                } while (!validarFormato(fecha));
+                return fecha;
+            }
+
+            let fecha1 = solicitarFecha("Introduce la primera fecha (dd/mm/aaaa):");
+            let fecha2 = solicitarFecha("Introduce la segunda fecha (dd/mm/aaaa):");
+
+            function convertirAFecha(fecha) {
+                const dia = fecha.split("/")[0];
+                const mes = fecha.split("/")[1];
+                const anio = fecha.split("/")[2];
+                return new Date(anio, mes - 1, dia);
+            }
+            const date1 = convertirAFecha(fecha1);
+            const date2 = convertirAFecha(fecha2);
+            const diferenciaEnMilisegundos = Math.abs(date2 - date1);
+            const diferenciaEnDias = Math.round(diferenciaEnMilisegundos / (1000 * 60 * 60 * 24));
+            alert('La diferencia entre las fechas es de '+ diferenciaEnDias +'dias.');
+        }
+        calcularDiferenciaFechas();
+    </script>
+</body>
+
+</html>
